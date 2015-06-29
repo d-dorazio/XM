@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css"  media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>XM</title>
+
+ <style>
+ .orangeSwitch label input[type=checkbox]:checked + .lever {
+   background-color:#ef6c00; }
+
+ .orangeSwitch label input[type=checkbox]:checked + .lever:after {
+   background-color: #e65100; }
+ </style>
+</head>
+
+<body style="background:#424242" ng-app="xmclient" >
+
+  <header>
+    <nav>
+      <div class="nav-wrapper grey darken-4">
+        <img class="brand-logo " src="img/icon.png" style="margin-top:15px;"></img>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a href="https://github.com/d-dorazio/XM" style="color:#e0e0e0">
+              <i class="fa fa-github fa-2x right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container " style="text-align:center;" ng-controller='xmController'>
+
+      <div class="container" style="text-align:center;" >
+        <h5 style="color:#eceff1">Async</h5>
+      <!-- Switch -->
+      <div class="switch orangeSwitch">
+        <label style="color:#eceff1">
+          Off
+          <input  type="checkbox" ng-model="async">
+          <span class="lever"></span>
+          On
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="container" style="text-align:center;">
+      <img src="http://192.168.0.1:8090/?action=stream" style="height: auto; max-width: 320px; ">
+    </div>
+<br>
+
+    <div class="container" style="text-align:center;">
+      <span style="color: #ef6c00;"><i class="small mdi-navigation-expand-less" ng-click="forward()"></i></span> <br>
+      <span style="color: #ef6c00;"><i class="small mdi-navigation-chevron-left" ng-click="left()"></i></span>
+
+      <span style="color: #ef6c00;"><i class="small mdi-content-report" ng-click="stop()"></i></span>
+      <span style="color: #ef6c00;text-align:right"><i class="small  mdi-navigation-chevron-right" ng-click="right()"></i></span><br>
+
+      <span style="color: #ef6c00;"><i class="small mdi-navigation-expand-more" ng-click="backward()"></i></span>
+
+    </div>
+  </div>
+  </main>
+              <!--Import jQuery before materialize.js-->
+              <script type="text/javascript" src="./js/jquery.min.js"></script>
+              <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+              <script type="text/javascript" src="./js/angular.min.js"></script>
+              <script type="text/javascript" src="./js/script.js"></script>
+            </body>
+            </html>
